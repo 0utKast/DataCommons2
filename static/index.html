@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Data Commons</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <h1>🤖 Asistente Data Commons</h1>
+        <button class="api-key-btn" onclick="showConfig()">🔑 Configurar API Key</button>
+    </div>
+
+    <div class="chat-container">
+        <div class="messages-area" id="messages">
+            <div class="message bot">
+                <div class="avatar">🤖</div>
+                <div class="bubble">
+                    ¡Hola! Soy tu asistente de datos. Puedo buscar estadísticas mundiales por ti.<br>
+                    Prueba preguntando: <i>"¿Cuál es la población de España por provincias?"</i> o <i>"Compara el PIB de
+                        Francia y Alemania"</i>.
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Pregunta algo sobre datos..."
+                onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <!-- Config Modal -->
+    <div id="config-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <h2>Configuración</h2>
+            <p>Para usar la inteligencia artificial, necesitas una API Key de Google Gemini (es gratuita).</p>
+            <input type="password" id="api-key-input" placeholder="Pega tu API Key aquí (AIza...)">
+            <div class="modal-actions">
+                <button onclick="saveConfig()">Guardar</button>
+                <button onclick="closeConfig()" style="background:transparent; color:#666;">Cancelar</button>
+            </div>
+            <p style="font-size:0.8rem; margin-top:1rem;">
+                <a href="https://aistudio.google.com/app/apikey" target="_blank">Obtener API Key gratis aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
