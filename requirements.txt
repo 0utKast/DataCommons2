@@ -2,3 +2,4 @@ flask
 datacommons-mcp
 mcp
 google-generativeai
+gunicorn

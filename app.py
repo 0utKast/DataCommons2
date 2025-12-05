@@ -131,7 +131,7 @@ async def _call_mcp_tool(tool_name, arguments):
 
 @app.route('/')
 def index():
-    return send_from_directory('static', 'index.html')
+    return send_from_directory('.', 'index.html')
 
 @app.route('/api/config', methods=['POST'])
 def config_api():
